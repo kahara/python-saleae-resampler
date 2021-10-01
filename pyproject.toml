@@ -3,15 +3,13 @@ name = "saleae_resampler"
 version = "0.1.0"
 description = "My \"brilliant\" desc"
 authors = ["Joni Kähärä <joni.kahara@async.fi>"]
-# FIXME: Doublecheck these values
-#homepage = "https://gitlab.com/advian-oss/python-saleae-resampler/"
-#repository = "https://gitlab.com/advian-oss/python-saleae-resampler/"
-#license = "FIXME"
-readme = "README.rst"
+homepage = "https://github.com/kahara/python-saleae-resampler/"
+repository = "https://github.com/kahara/python-saleae-resampler/"
+license = "MIT"
+readme = "README.md"
 
 [tool.poetry.scripts]
 saleae_resampler = "saleae_resampler.console:saleae_resampler_cli"
-
 
 [tool.black]
 line-length = 120
@@ -53,13 +51,8 @@ branch = true
 
 [tool.poetry.dependencies]
 python = "^3.8"
-# Use this instead of above if you *need* python 3.6 support, also add py36 to tox.ini envlist
-# You also need to add a suitable python 3.6 version to the "PYTHON_VERSIONS" arg in the Dockerfile
-# python = "^3.6"
-# Uncomment this if you *need* python 3.6 support
-# dataclasses = { version = "^0.7", python = "~3.6" }
-datastreamservicelib = { version = "^1.10" }
 
+python-dateutil = "^2.8.2"
 [tool.poetry.dev-dependencies]
 pytest = "^6.2"
 coverage = {version = "^5.4", extras = ["toml"]}
