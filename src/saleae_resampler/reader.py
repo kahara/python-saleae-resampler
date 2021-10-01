@@ -27,4 +27,4 @@ class Reader:
             yield (
                 dateutil.parser.parse(row[0]),
                 bool(row[self.channel + 1]),
-            )  # True if int(row[self.channel + 1]) else False)
+            )
