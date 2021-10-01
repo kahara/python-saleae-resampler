@@ -26,5 +26,5 @@ class Reader:
         for row in reader:
             yield (
                 dateutil.parser.parse(row[0]),
-                bool(row[self.channel + 1]),
+                bool(int(row[self.channel + 1])),
             )
