@@ -53,6 +53,8 @@ branch = true
 python = "^3.8"
 
 python-dateutil = "^2.8.2"
+pyaml = "^21.8.3"
+libadvian = "^0.2.0"
 [tool.poetry.dev-dependencies]
 pytest = "^6.2"
 coverage = {version = "^5.4", extras = ["toml"]}

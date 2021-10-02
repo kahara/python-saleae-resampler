@@ -5,6 +5,7 @@ import logging
 from pathlib import Path
 
 import click
+from libadvian.logging import init_logging
 
 from saleae_resampler import __version__
 from saleae_resampler.resampler import Resampler
@@ -38,11 +39,13 @@ def saleae_resampler_cli(  # pylint: disable=R0913
         loglevel = 20
     if verbose >= 2:
         loglevel = 10
+
+    init_logging(loglevel)
     LOGGER.setLevel(loglevel)
 
     with open(inputpath, "r", encoding="utf8") as inputstream:
         with open(outputpath, "wb") as outputstream:
             resampler = Resampler(
-                inputstream=inputstream, outputstream=outputstream, channel=int(channel), samplerate=samplerate
+                inputstream=inputstream, outputstream=outputstream, channel=int(channel), samplerate=float(samplerate)
             )
             sys.exit(resampler.resample())

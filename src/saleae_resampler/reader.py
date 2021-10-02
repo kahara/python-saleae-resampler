@@ -2,10 +2,13 @@
 
 import csv
 import datetime
+import logging
 from dataclasses import dataclass, field
 from typing import Tuple, Generator, TextIO
 
 import dateutil.parser
+
+LOGGER = logging.getLogger(__name__)
 
 
 @dataclass
